@@ -27,6 +27,16 @@ pipeline{
 
 			steps {
 				bat 'docker push negatverum/futbol'
+				// bat 'docker-compose down'
+				// bat 'docker image prune -a -f'
+			}
+		}
+
+		stage('Pull') {
+
+			steps {
+				// bat 'docker pull negetverum/futbol'
+				// bat 'docker '
 			}
 		}
 	}
