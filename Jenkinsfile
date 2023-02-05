@@ -2,9 +2,9 @@ pipeline{
 
 	agent any
 
-	// environment {
-	// 	DOCKERHUB_CREDENTIALS=credentials('dockerhub')
-	// }
+	environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhubCredentials')
+	}
 
 	stages {
 
@@ -18,7 +18,7 @@ pipeline{
 		stage('Login') {
 
 			steps {
-				bat 'docker login --username=negatverum -p 120096147'
+				bat 'docker login --username=%DOCKERHUB_CREDENTIALS_PSW% -p %DOCKERHUB_CREDENTIALS_USR%'
 			}
 		}
 
