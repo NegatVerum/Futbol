@@ -15,17 +15,17 @@ pipeline{
 			}
 		}
 
-		// stage('Login') {
+		stage('Login') {
 
-		// 	steps {
-		// 		bat 'docker login'
-		// 	}
-		// }
+			steps {
+				bat 'docker login --username=negatverum -p 120096147'
+			}
+		}
 
 		stage('Push') {
 
 			steps {
-				bat 'docker push negatverum/furbol:latest'
+				bat 'docker push negatverum/furbol'
 			}
 		}
 	}
