@@ -35,7 +35,8 @@ pipeline{
 		stage('Pull') {
 
 			steps {
-				bat 'pwd'
+				bat 'ssh -i "../new_ec2_linux.pem" ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com'
+				bat 'docker version'
 			}
 		}
 	}
