@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t negatverum/furbol .'
+				bat 'docker build -t negatverum/furbol .'
 			}
 		}
 
