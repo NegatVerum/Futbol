@@ -15,12 +15,12 @@ pipeline{
 			}
 		}
 
-		stage('Login') {
+		// stage('Login') {
 
-			steps {
-				bat 'docker login'
-			}
-		}
+		// 	steps {
+		// 		bat 'docker login'
+		// 	}
+		// }
 
 		stage('Push') {
 
