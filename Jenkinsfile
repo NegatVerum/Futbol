@@ -35,7 +35,7 @@ pipeline{
 		stage('Pull') {
 
 			steps {
-				// bat 'docker pull negetverum/futbol'
+				bat 'docker pull negetverum/futbol'
 				// bat 'docker '
 			}
 		}
