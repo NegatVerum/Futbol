@@ -18,7 +18,7 @@ pipeline{
 		stage('Login') {
 
 			steps {
-				bat 'docker login --username=%DOCKERHUB_CREDENTIALS_PSW% -p %DOCKERHUB_CREDENTIALS_USR%'
+				bat 'docker login -u %DOCKERHUB_CREDENTIALS_PSW% -p %DOCKERHUB_CREDENTIALS_USR%'
 			}
 		}
 
