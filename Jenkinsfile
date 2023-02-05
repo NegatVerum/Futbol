@@ -36,8 +36,10 @@ pipeline{
 
 			steps {
 				bat 'ssh -i /Users/Dante/.jenkins/new_ec2_linux.pem ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com'
+				bat 'docker image prune -a'
 				bat 'docker pull negatverum/futbol:1.0.0-%BUILD_ID%'
-				sh 'docker stop $(docker ps -a -q)'
+				bat 'docker stop $(docker ps -aq)'
+				bat 'docker rm $(docker ps -aq)'
 				bat 'docker run -d -p 80:80 negatverum/futbol:1.0.0-%BUILD_ID%'
 				bat 'exit'
 			}
