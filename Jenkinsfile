@@ -32,13 +32,12 @@ pipeline{
 			}
 		}
 
-		// stage('Pull') {
+		stage('Pull') {
 
-		// 	steps {
-		// 		bat 'docker pull negetverum/futbol'
-		// 		// bat 'docker '
-		// 	}
-		// }
+			steps {
+				echo '${WORKSPACE}'
+			}
+		}
 	}
 
 	post {
