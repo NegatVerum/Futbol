@@ -39,7 +39,7 @@ pipeline{
 				bat 'docker image prune -af'
 				bat 'docker pull negatverum/futbol:1.0.0-%BUILD_ID%'
 				bat 'docker container prune -f'
-				bat 'docker run -d -p 80:80 negatverum/futbol:1.0.0-%BUILD_ID%'
+				bat 'docker run -d -p 8080:80 negatverum/futbol:1.0.0-%BUILD_ID%'
 				bat 'exit'
 			}
 		}
