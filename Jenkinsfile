@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				bat 'docker build -t negatverum/Futbol .'
+				bat 'docker build -t negatverum/futbol .'
 			}
 		}
 
@@ -26,7 +26,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				bat 'docker push negatverum/Futbol'
+				bat 'docker push negatverum/futbol'
 			}
 		}
 	}
