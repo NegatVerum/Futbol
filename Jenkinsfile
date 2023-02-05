@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				bat 'docker build -t negatverum/futbol:1.0.0-${BUILD_ID} .'
+				bat 'docker build -t negatverum/futbol:1.0.0-%{BUILD_ID}% .'
 			}
 		}
 
