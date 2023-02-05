@@ -35,7 +35,7 @@ pipeline{
 		stage('Pull') {
 
 			steps {
-				echo '${WORKSPACE}'
+				bat 'pwd'
 			}
 		}
 	}
