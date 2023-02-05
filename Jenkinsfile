@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				bat 'docker build -t negatverum/futbol .'
+				bat 'docker build -t negatverum/futbol:1.0.0-${BUILD_ID} .'
 			}
 		}
 
@@ -32,13 +32,13 @@ pipeline{
 			}
 		}
 
-		stage('Pull') {
+		// stage('Pull') {
 
-			steps {
-				bat 'docker pull negetverum/futbol'
-				// bat 'docker '
-			}
-		}
+		// 	steps {
+		// 		bat 'docker pull negetverum/futbol'
+		// 		// bat 'docker '
+		// 	}
+		// }
 	}
 
 	post {
