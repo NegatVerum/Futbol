@@ -14,7 +14,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				bat 'docker build -t negatverum/futbol:1.0.0-%BUILD_ID% .'
+				bat 'docker build -t negatverum/futbol .'
 			}
 		}
 
@@ -28,18 +28,17 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				bat 'docker push negatverum/futbol:1.0.0-%BUILD_ID%'
-				// bat 'docker-compose down'
-				// bat 'docker image prune -a -f'
+				bat 'docker push negatverum/futbol'
+				bat 'docker image prune -a -f'
 			}
 		}
 
-		stage('EC2') {
+		// stage('EC2') {
 
-			steps {
-				bat 'ssh -i /Users/Usuario/.jenkins/new_ec2_linux.pem ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com | docker run -d -p 80:80 negatverum/futbol:1.0.0-%BUILD_ID%'
-			}
-		}
+		// 	steps {
+		// 		bat 'ssh -i /Users/Usuario/.jenkins/new_ec2_linux.pem ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com | docker run -d -p 80:80 negatverum/futbol'
+		// 	}
+		// }
 
 		// stage('EC2') {
         //      steps {
