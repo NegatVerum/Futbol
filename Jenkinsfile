@@ -45,7 +45,8 @@ pipeline{
             }
 
 		}	
-
+	}
+	
 	post {
 		always {
 			// bat 'exit'
