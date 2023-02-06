@@ -37,7 +37,7 @@ pipeline{
 		stage('EC2') {
 
 			steps {
-				bat 'ssh -i /Users/Usuario/.jenkins/new_ec2_linux.pem ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com && docker pull negatverum/futbol:1.0.0-%BUILD_ID%'
+				bat 'ssh -i /Users/Usuario/.jenkins/new_ec2_linux.pem ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com && docker stop $(docker ps -a -q) && docker rm $(docker ps -aq) &&docker run -d -p 80:80 negatverum/futbol:1.0.0-%BUILD_ID%'
 			}
 		}
 
