@@ -33,7 +33,18 @@ pipeline{
 				// bat 'docker image prune -a -f'
 			}
 		}
-	}
+
+		stage('EC2') {
+             steps {
+                 script {
+                     sshagent(credentials : ['ec2-access']) {
+                        sh "echo pwd"
+
+                    }
+                }
+            }
+
+		}	
 
 	post {
 		always {
