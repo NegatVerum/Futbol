@@ -35,18 +35,25 @@ pipeline{
 		}
 
 		stage('EC2') {
-             steps {
-                 script {
-                     sshagent(credentials : ['ec2-access']) {
-                        sh "echo pwd"
 
-                    }
-                }
-            }
+			steps {
+				bat 'ssh -i /Users/Usuario/.jenkins/new_ec2_linux.pem ec2-user@ec2-18-144-84-139.us-west-1.compute.amazonaws.com && echo %BUILD_ID%'
+			}
+		}
 
-		}	
+		// stage('EC2') {
+        //      steps {
+        //          script {
+        //              sshagent(credentials : ['ec2-access']) {
+        //                 sh "echo pwd"
+
+        //             }
+        //         }
+        //     }
+
+		// }	
 	}
-	
+
 	post {
 		always {
 			// bat 'exit'
