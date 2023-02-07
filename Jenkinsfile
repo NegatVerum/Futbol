@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS_PSW='120096147'
+		DOCKERHUB_CREDENTIALS_PSW='123456789'
 		DOCKERHUB_CREDENTIALS_USR='negatverum'
 	}
 
